@@ -17,6 +17,6 @@ export default defineConfig({
       path: "../../packages/ui/tailwind.config.cjs"
     }
   })],
-  // output: "server",
-  // adapter: netlify()
+  output: "server",
+  adapter: netlify()
 });
