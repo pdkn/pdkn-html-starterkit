@@ -33,12 +33,12 @@ type ButtonSize = keyof typeof sizesLookup
 type ButtonShape = keyof typeof shapesLookup
 
 interface ButtonProps extends Omit<ComponentProps<'button'>, 'className'> {
-  variant: ButtonVariant
-  size: ButtonSize
-  shape: ButtonShape
-  outline: boolean
-  disabled: boolean
   children: ReactNode
+  variant?: ButtonVariant
+  size?: ButtonSize
+  shape?: ButtonShape
+  outline?: boolean
+  disabled?: boolean
 }
 
 export const Button = (props: ButtonProps) => {
