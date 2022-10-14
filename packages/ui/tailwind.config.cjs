@@ -10,6 +10,6 @@ module.exports = {
 	},
 	plugins: [
 		require("daisyui"),
-		require("./gradients-plugin"),
+		require("./utils/tailwindcss-gradients"),
 	],
 }
