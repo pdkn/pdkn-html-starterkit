@@ -6,17 +6,19 @@ import { ModalButton } from '../components/ModalButton';
 import MainMenu from '../../../../packages/ui/organisms/MainMenu.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro Starter Template.">
 	<MainMenu />
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<h1>Welcome to <span class="text-gradient">Astro Starter Template</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
 
+		<div class="flex gap-3 pb-5">
 		<Button variant="primary">UI DS React Button</Button>
 		<ModalButton client:load>Modal Button</ModalButton>
+		</div>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
@@ -46,7 +48,7 @@ import MainMenu from '../../../../packages/ui/organisms/MainMenu.astro';
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 70ch;
 	}
 	h1 {
 		font-size: 3rem;
