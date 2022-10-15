@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../../../../packages/ui/molecules/Card.astro';
-import { Button } from '../../../../packages/ui';
-import MegaMenu from '../../../../packages/ui/organisms/MainMenu.astro';
+import Card from 'ui/molecules/Card.astro';
+import { Button } from 'ui';
+import { ModalButton } from '../components/ModalButton';
+import MainMenu from 'ui/organisms/MainMenu.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<MegaMenu />
+	<MainMenu />
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
@@ -15,7 +16,7 @@ import MegaMenu from '../../../../packages/ui/organisms/MainMenu.astro';
 		</p>
 
 		<Button variant="primary">UI DS React Button</Button>
-
+		<ModalButton client:load>Modal Button</ModalButton>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"

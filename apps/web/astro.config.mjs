@@ -12,7 +12,10 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), partytown(), tailwind({
+  integrations: [
+    preact(), 
+    // partytown(),
+    tailwind({
     config: {
       path: "../../packages/ui/tailwind.config.cjs"
     }

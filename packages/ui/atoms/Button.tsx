@@ -38,13 +38,15 @@ interface ButtonProps extends Omit<ComponentProps<'button'>, 'className'> {
   size?: ButtonSize
   shape?: ButtonShape
   outline?: boolean
-  disabled?: boolean
+  class?: string | ''
+  className?: `Hey, sorry but you can't pass classes to the Button component - Design System decision 🤷‍♀️`
 }
 
 export const Button = (props: ButtonProps) => {
-  const { variant, size, shape, outline, children, ...rest } = props
+  const { variant, size, shape, outline, children, disabled, onClick, ...rest } = props
+  const classes = `${baseClasses} ${outline ? outlineClass : ''} ${variant ? variantsLookup[variant] : ''} ${size ? sizesLookup[size] : ''} ${shape ? shapesLookup[shape] : ''}`
   return (
-    <button {...rest} className={`${baseClasses} ${outline ? outlineClass : ''} ${variantsLookup[variant]} ${sizesLookup[size]} ${shapesLookup[shape]}`}>
+    <button onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
     );
