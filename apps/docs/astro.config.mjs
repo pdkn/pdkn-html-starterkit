@@ -18,7 +18,7 @@ export default defineConfig({
   mdx(),
   tailwind({
     config: {
-      path: "../../packages/ui/tailwind.config.cjs"
+      path: "./../../packages/ui/tailwind.config.cjs"
     }
   })],
   site: `http://docs.mysite.io`
