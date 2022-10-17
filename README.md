@@ -1,6 +1,8 @@
-# Turborepo Astro, Tailwind, DaisyUI, Netlify starter
+# Turborepo, Astro, Tailwind, DaisyUI, Netlify starter
 
-WIP This is under active development, Do not use in prod yet.
+This is a demo monorepo on how to make an easily configualbe Design System from open-source libraries.
+
+WIP This is under active development, not production ready.
 
 ## What's inside?
 
