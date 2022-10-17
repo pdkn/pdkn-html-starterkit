@@ -49,12 +49,17 @@ export const SIDEBAR: Sidebar = {
 	en: {
 		'Atomic Design System': [
 			{ text: 'Introduction', link: 'en/introduction' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' },
+			{ text: 'Overview', link: 'en/design-system-overview' },
 		],
 		'Atoms': [
-			{ text: 'Overview', link: 'en/design-system-overview' },
 			{ text: 'Buttons', link: 'en/design-system-atoms-buttons' }
 		],
+		'Molecules': [
+			{ text: 'Cards', link: 'en/design-system-molecules-cards' }
+		],
+		'Organisims': [
+			{ text: 'Mega Menu', link: 'en/design-system-organisms-menu' }
+		],
+
 	},
 };
