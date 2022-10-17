@@ -57,8 +57,8 @@ export const SIDEBAR: Sidebar = {
 		'Molecules': [
 			{ text: 'Cards', link: 'en/design-system-molecules-cards' }
 		],
-		'Organisims': [
-			{ text: 'Mega Menu', link: 'en/design-system-organisms-menu' }
+		'Organisms': [
+			{ text: 'Mega Menu', link: 'en/design-system-organisms-mega-menu' }
 		],
 
 	},
