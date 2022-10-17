@@ -228,6 +228,14 @@
     uvu "^0.5.0"
     vfile-message "^3.0.0"
 
+"@astrojs/netlify@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-1.2.0.tgz#88368ce663b32dd204a278506ed25eafd12f681b"
+  integrity sha512-nFWdgR5OVUCdYt/d3U3XBYPEMukGwxzRKH4D20lk8SjQsKTtvhJpRIJWrhlGJApidjms1WJXa8xh6A8BQYRmmA==
+  dependencies:
+    "@astrojs/webapi" "^1.1.0"
+    esbuild "^0.14.43"
+
 "@astrojs/preact@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@astrojs/preact/-/preact-1.2.0.tgz#ce6fdfb00bb3d7482ae173428648d5800ad1d51a"
@@ -3954,6 +3962,11 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
 
+std@0.1.x:
+  version "0.1.40"
+  resolved "https://registry.yarnpkg.com/std/-/std-0.1.40.tgz#3678a5f65094d9e1b6b5e26edbfc0212b8342b71"
+  integrity sha512-wUf57hkDGCoVShrhPA8Q7lAg2Qosk+FaMlECmAsr1A4/rL2NRXFHQGBcgMUFKVkPEemJFW9gzjCQisRty14ohg==
+
 string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
@@ -4170,6 +4183,13 @@ typescript@*:
   version "4.8.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.4.tgz#c464abca159669597be5f96b8943500b238e60e6"
   integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
+
+ui@*:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/ui/-/ui-0.2.4.tgz#39b7c8086b2b1b64a72c6437c38ddc7c4e4e836d"
+  integrity sha512-se2D+frb/i6JwFc7j72IEa0JADF8lfgc6ivOigaYkXHOuZRBtWe8R7UZ2YiXcbJ1dYNsjq40dn39rlNRxmVdPw==
+  dependencies:
+    std "0.1.x"
 
 unherit@^3.0.0:
   version "3.0.0"

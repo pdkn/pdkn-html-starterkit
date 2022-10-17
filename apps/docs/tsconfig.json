@@ -3,5 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "skipLibCheck": true
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx","**/*.astro","**/*.html","**/*.js","**/*.jsx","**/*.md","**/*.mdx","**/*.svelte","**/*.vue"],
+  "exclude": ["node_modules"]
 }
