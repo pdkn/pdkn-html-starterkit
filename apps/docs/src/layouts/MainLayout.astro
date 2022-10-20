@@ -21,7 +21,7 @@ const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.mdx`;
 const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 ---
 
-<html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial" data-theme="brandTheme">
+<html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial" data-theme="light">
 	<head>
 		<HeadCommon />
 		<HeadSEO frontmatter={frontmatter} canonicalUrl={canonicalURL} />
@@ -38,12 +38,9 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 			}
 
 			.layout {
-				display: grid;
+				display: flex;
 				grid-auto-flow: column;
-				grid-template-columns: minmax(var(--gutter), 1fr) minmax(0, var(--max-width)) minmax(
-						var(--gutter),
-						1fr
-					);
+				/* grid-template-columns: minmax(var(--gutter), 1fr); */
 				overflow-x: hidden;
 			}
 
@@ -67,6 +64,7 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 				display: flex;
 				flex-direction: column;
 				height: 100%;
+				width: calc(100vw - 20rem);
 			}
 
 			#grid-right {
@@ -76,7 +74,7 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 			@media (min-width: 50em) {
 				.layout {
 					overflow: initial;
-					grid-template-columns: 20rem minmax(0, var(--max-width));
+					/* grid-template-columns: 20rem minmax(0, var(--max-width)); */
 					gap: 1em;
 				}
 
@@ -90,7 +88,7 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 
 			@media (min-width: 72em) {
 				.layout {
-					grid-template-columns: 20rem minmax(0, var(--max-width)) 18rem;
+					/* grid-template-columns: 20rem minmax(0, var(--max-width)); */
 					padding-left: 0;
 					padding-right: 0;
 					margin: 0 auto;
@@ -121,8 +119,8 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 
 	<body>
 		<Header currentPage={currentPage} />
-		<main class="layout">
-			<aside id="grid-left" class="grid-sidebar" title="Site Navigation">
+		<main class="layout w-full">
+			<aside id="grid-left" class="grid-sidebar w-80 max-w-[20rem]" title="Site Navigation">
 				<LeftSidebar currentPage={currentPage} />
 			</aside>
 			<div id="grid-main">
@@ -130,9 +128,9 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 					<slot />
 				</PageContent>
 			</div>
-			<aside id="grid-right" class="grid-sidebar" title="Table of Contents">
+			<!-- <aside id="grid-right" class="grid-sidebar" title="Table of Contents">
 				<RightSidebar headings={headings} githubEditUrl={githubEditUrl} />
-			</aside>
+			</aside> -->
 		</main>
 		<Footer path={currentFile} />
 	</body>

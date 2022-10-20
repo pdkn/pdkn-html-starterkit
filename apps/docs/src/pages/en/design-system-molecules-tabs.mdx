@@ -11,15 +11,27 @@ examples below
 ## Examples
 
 
-<div classs="p-8 bg-red-100" >
+<div classs="p-8" >
 <Tabs variant="lifted" size="large" client:visible>
-  <Fragment slot="tab.1">Usage in .md</Fragment>
-  <Fragment slot="tab.2">Usage in .mdx</Fragment>
+  <Fragment slot="tab.1">Tab 1</Fragment>
+  <Fragment slot="tab.2.active">Tab 2 (selected by default)</Fragment>
   <Fragment slot="panel.1">
-    ``` setup: | import {variables} from "@variables" ```
+    ``` Tab 1 content here ```
   </Fragment>
   <Fragment slot="panel.2">
-    ``` import {variables} from "@variables" ```
+    ``` use .active in the slot name ```
   </Fragment>
 </Tabs>
 </div>
+```
+<Tabs variant="lifted" size="large" client:visible>
+  <Fragment slot="tab.1">Tab 1</Fragment>
+  <Fragment slot="tab.2.active">Tab 2 (selected by default)</Fragment>
+  <Fragment slot="panel.1">
+    ``` Tab 1 content here ```
+  </Fragment>
+  <Fragment slot="panel.2">
+    ``` use .active in the slot name ```
+  </Fragment>
+</Tabs>
+```

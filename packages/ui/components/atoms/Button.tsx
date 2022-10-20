@@ -27,7 +27,9 @@ const shapesLookup = {
 }
 
 const outlineClass = 'btn-outline'
+const activeClass = 'btn-active'
 const disabledClass = 'btn-disabled'
+
 
 type ButtonVariant = keyof typeof variantsLookup
 type ButtonSize = keyof typeof sizesLookup
@@ -38,16 +40,18 @@ interface ButtonProps extends Omit<PropsWithChildren<'button'>, 'className'> {
   size?: ButtonSize
   shape?: ButtonShape
   outline?: boolean
+  active?: boolean
   class?: string | ''
   className?: `Hey, sorry but you can't pass classes to the Button component - Design System decision 🤷‍♀️`
 }
 
 export const Button = (props: ButtonProps) => {
-  const { variant, size, shape, outline, children, disabled, onClick, ...rest } = props
+  const { variant, size, shape, outline, active, children, disabled, onClick, ...rest } = props
 
   const classes = classNames(
     {[baseClasses]: true},
     {[outlineClass]: outline},
+    {[activeClass]: active},
     {[variantsLookup[variant]]: variant},
     {[sizesLookup[size]]: size},
     {[shapesLookup[shape]]: shape},

@@ -19,9 +19,12 @@ const sizesLookup = {
   large: 'tab-lg',
 }
 
-
 type ComponentVariant = keyof typeof variantsLookup
 type ComponentSize = keyof typeof sizesLookup
+
+// TODO abstract this out to a utility function so different tabs can have different styles
+const activeTabBgColor = `[--tab-bg:hsl(var(--b2))]`;
+const activePanelBgColor = 'bg-base-200';
 
 const tabSlotKey = 'tab.' as const;
 const panelSlotKey = 'panel.' as const;
@@ -56,10 +59,9 @@ type Props = {
   size?: ComponentSize
   [key: TabSlot | PanelSlot]: ComponentChild;
   sharedStore?: string;
-  children: ComponentChildren;
 };
 
-export const Tabs = ({ sharedStore, children, variant, size, ...slots }: Props) => {
+export const Tabs = ({ sharedStore, variant, size, ...slots }: Props) => {
   const tabs = Object.entries(slots).filter(isTabSlotEntry);
   const panels = Object.entries(slots).filter(isPanelSlotEntry);
 
@@ -67,8 +69,8 @@ export const Tabs = ({ sharedStore, children, variant, size, ...slots }: Props) 
   const tabButtonRefs = useRef<Record<TabSlot, HTMLButtonElement | null>>({});
 
   const activeTab = tabs.find(([key]) => key.includes('.active')) ?? tabs[0];
-  const firstPanelKey = getBaseKeyFromTab(activeTab[0]);
-  const [curr, setCurrStore] = useTabState(firstPanelKey, sharedStore);
+  const firstTabKey = getBaseKeyFromTab(activeTab[0]);
+  const [curr, setCurrStore] = useTabState(firstTabKey, sharedStore);
 
   function moveFocus(event: KeyboardEvent) {
     if (event.key === 'ArrowLeft') {
@@ -113,10 +115,10 @@ export const Tabs = ({ sharedStore, children, variant, size, ...slots }: Props) 
                 {[variantsLookup[variant]]: variant},
                 {[sizesLookup[size]]: size},
                 {'tab-active': curr === getBaseKeyFromTab(key)},
-                {'!bg-gray-100': curr === getBaseKeyFromTab(key)},
+                {[activeTabBgColor]: curr === getBaseKeyFromTab(key)},
+                {'[--tab-border-color:transparent]': curr !== getBaseKeyFromTab(key)},
             )}
             role="tab"
-            tabIndex={curr === getBaseKeyFromTab(key) ? 0 : -1}
           >
             {/* {tab.icon && <tab.icon className={theme.tablist.tabitem.icon} />} */}
             {content}
@@ -126,7 +128,11 @@ export const Tabs = ({ sharedStore, children, variant, size, ...slots }: Props) 
       </div>
       {panels.map(([key, content], index) => (
         <div
-          className='p-4 bg-gray-100 rounded-b-lg rounded-t-lg rounded-tl-none border-solid border border-base-300'
+          className={classNames(
+            'p-4 rounded-b-lg rounded-t-lg border-solid border border-base-300',
+            activePanelBgColor,
+            {'rounded-tl-none': firstTabKey === getBaseKeyFromPanel(key)}
+          )}
           hidden={curr !== getBaseKeyFromPanel(key)}
           role="tabpanel"
           aria-labelledby={`${tabSlotKey}${getBaseKeyFromPanel(key)}`}
