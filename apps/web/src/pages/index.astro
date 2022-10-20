@@ -1,9 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from 'ui/molecules/Card.astro';
-import { Button } from 'ui';
+import Card from 'ui/components/molecules/Card.astro';
+import { Button, Tabs } from 'ui';
 import { ModalButton } from '../components/ModalButton';
-import MegaMenu from 'ui/organisms/MegaMenu.astro';
+import MegaMenu from 'ui/components/organisms/MegaMenu.astro';
+
+const tabs = [
+	{
+		title: 'Profile',
+	},
+	{
+		title: 'Dashboard',
+	},
+	{
+		title: 'Disabled',
+	}
+]
 ---
 
 <Layout title="Welcome to Astro Starter Template.">
@@ -41,6 +53,19 @@ import MegaMenu from 'ui/organisms/MegaMenu.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+
+		<div class='mt-6'>
+			<Tabs variant="lifted" size="large" client:visible>
+				<Fragment slot="tab.1">Usage in .md</Fragment>
+				<Fragment slot="tab.2.active">Usage in .mdx</Fragment>
+				<Fragment slot="panel.1">
+					Panel 1 Content
+				</Fragment>
+				<Fragment slot="panel.2">
+				  Panel 2 Content
+				</Fragment>
+			</Tabs>
+		</div>
 	</main>
 </Layout>
 

@@ -1,5 +1,6 @@
 import * as React from "react";
-import type { ComponentProps, ReactNode } from 'react'
+import type { PropsWithChildren } from 'react'
+import classNames from 'classnames';
 
 const baseClasses = 'btn'
 
@@ -32,8 +33,7 @@ type ButtonVariant = keyof typeof variantsLookup
 type ButtonSize = keyof typeof sizesLookup
 type ButtonShape = keyof typeof shapesLookup
 
-interface ButtonProps extends Omit<ComponentProps<'button'>, 'className'> {
-  children: ReactNode
+interface ButtonProps extends Omit<PropsWithChildren<'button'>, 'className'> {
   variant?: ButtonVariant
   size?: ButtonSize
   shape?: ButtonShape
@@ -44,7 +44,15 @@ interface ButtonProps extends Omit<ComponentProps<'button'>, 'className'> {
 
 export const Button = (props: ButtonProps) => {
   const { variant, size, shape, outline, children, disabled, onClick, ...rest } = props
-  const classes = `${baseClasses} ${outline ? outlineClass : ''} ${variant ? variantsLookup[variant] : ''} ${size ? sizesLookup[size] : ''} ${shape ? shapesLookup[shape] : ''}`
+
+  const classes = classNames(
+    {[baseClasses]: true},
+    {[outlineClass]: outline},
+    {[variantsLookup[variant]]: variant},
+    {[sizesLookup[size]]: size},
+    {[shapesLookup[shape]]: shape},
+  );
+
   return (
     <button onClick={onClick} disabled={disabled} className={classes}>
       {children}

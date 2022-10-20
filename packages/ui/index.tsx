@@ -1,2 +1,3 @@
 import * as React from "react";
-export * from "./atoms/Button";
+export * from "./components/atoms/Button";
+export * from "./components/molecules/Tabs/";

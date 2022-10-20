@@ -55,6 +55,7 @@ export const SIDEBAR: Sidebar = {
 			{ text: 'Buttons', link: 'en/design-system-atoms-buttons' }
 		],
 		'Molecules': [
+			{ text: 'Tabs', link: 'en/design-system-molecules-tabs' },
 			{ text: 'Cards', link: 'en/design-system-molecules-cards' }
 		],
 		'Organisms': [

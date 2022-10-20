@@ -1,0 +1,25 @@
+---
+title: Tabs
+description: Documentation and examples for Tabs
+layout: ../../layouts/MainLayout.astro
+---
+
+import {Tabs} from 'ui';
+
+examples below
+
+## Examples
+
+
+<div classs="p-8 bg-red-100" >
+<Tabs variant="lifted" size="large" client:visible>
+  <Fragment slot="tab.1">Usage in .md</Fragment>
+  <Fragment slot="tab.2">Usage in .mdx</Fragment>
+  <Fragment slot="panel.1">
+    ``` setup: | import {variables} from "@variables" ```
+  </Fragment>
+  <Fragment slot="panel.2">
+    ``` import {variables} from "@variables" ```
+  </Fragment>
+</Tabs>
+</div>

@@ -4,16 +4,25 @@ description: Documentation and examples for Buttons
 layout: ../../layouts/MainLayout.astro
 ---
 
-import { Button } from "ui";
+import { Button, Tabs } from "ui";
 
 examples below
 
 ## Examples
 
-<Button>My Button</Button>
-```
-<Button>My Button</Button>
-```
+<Tabs variant="lifted" size="large" client:visible>
+  <Fragment slot="tab.1.active">Default Button</Fragment>
+  <Fragment slot="tab.2">HTML</Fragment>
+  <Fragment slot="panel.1">
+   <Button>My Button</Button>
+  </Fragment>
+  <Fragment slot="panel.2">
+    ```
+    <Button>My Button</Button>
+    ```
+  </Fragment>
+</Tabs>
+
 
 <Button variant="primary">Primary Button</Button>
 ```

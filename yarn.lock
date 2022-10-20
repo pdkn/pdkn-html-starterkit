@@ -236,14 +236,6 @@
     "@astrojs/webapi" "^1.1.0"
     esbuild "^0.14.43"
 
-"@astrojs/partytown@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@astrojs/partytown/-/partytown-1.0.1.tgz"
-  integrity sha512-JVmKwQa2aWMAmz3tkNHtg5hw7gOTI6ROyFIYcUQtN6j8aysEiWKnt4xzz67RvDWId1h7sIde87UeH+4YoEyGug==
-  dependencies:
-    "@builder.io/partytown" "^0.7.1"
-    mrmime "^1.0.0"
-
 "@astrojs/preact@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@astrojs/preact/-/preact-1.2.0.tgz"
@@ -264,7 +256,7 @@
 
 "@astrojs/react@^1.2.0":
   version "1.2.0"
-  resolved "https://registry.npmjs.org/@astrojs/react/-/react-1.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/@astrojs/react/-/react-1.2.0.tgz#8a927ec8e389a9c7208a131dea0593b412609f9c"
   integrity sha512-UREteXiIaI7GDsPBgddtZpKAAUod+l/Baq+McY7gNs5w0aqDmHBzwoBZURPLklJXGAjZ/YBvrVtpiJrahEardA==
   dependencies:
     "@babel/core" ">=7.0.0-0 <8.0.0"
@@ -532,11 +524,6 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@builder.io/partytown@^0.7.1":
-  version "0.7.1"
-  resolved "https://registry.npmjs.org/@builder.io/partytown/-/partytown-0.7.1.tgz"
-  integrity sha512-hvu2gG9NDtCa5aoL4JkvDe3E5SegXlHAkhtA+Az96uTtFA0PYuEPjDYGiayGTkZuRKUmxetebWjIFgSDNdlBOw==
-
 "@docsearch/css@3.2.1", "@docsearch/css@^3.1.0":
   version "3.2.1"
   resolved "https://registry.npmjs.org/@docsearch/css/-/css-3.2.1.tgz"
@@ -692,6 +679,11 @@
     "@rollup/pluginutils" "^4.0.0"
     source-map "^0.7.0"
     vfile "^5.0.0"
+
+"@nanostores/preact@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@nanostores/preact/-/preact-0.3.1.tgz#e5c7f58f1328fcdb57a10a0b9cd5c58c2150c5cc"
+  integrity sha512-D5lC1tNhwlVURCFJUTlnRkQ3LRNt6Sc2XHByBwgHPaKLBUPJxAaNAL7kz2dAEhge1fk9dNXAexCdepwiIFodOQ==
 
 "@next/eslint-plugin-next@12.3.1":
   version "12.3.1"
@@ -1489,6 +1481,11 @@ ci-info@^3.3.1:
   version "3.5.0"
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-3.5.0.tgz"
   integrity sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==
+
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
 cli-boxes@^3.0.0:
   version "3.0.0"
@@ -4077,6 +4074,11 @@ nanoid@^3.3.4:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
+nanostores@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-0.7.0.tgz#e49a43dfa738d3aa91073235f2a88b69bf2a9ef9"
+  integrity sha512-y+ma9MVXuPzXKEXaRYW/iL/xG/HtMwB8fmFcMfUqt5fCNR/na2kDubbZGV4furUMTgmxfySJs0cQjORWhaPDyA==
+
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
@@ -4575,7 +4577,7 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-react-dom@^18.1.0:
+react-dom@^18.1.0, react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==

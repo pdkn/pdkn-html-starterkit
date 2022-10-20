@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { ComponentProps, ReactNode } from 'react'
-import { Button } from '../../../../packages/ui'
+import { Button } from 'ui'
 
 
 
