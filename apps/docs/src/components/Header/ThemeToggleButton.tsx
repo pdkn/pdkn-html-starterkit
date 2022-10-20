@@ -47,8 +47,10 @@ const ThemeToggle: FunctionalComponent = () => {
 		const root = document.documentElement;
 		if (theme === 'light') {
 			root.classList.remove('theme-dark');
+			root.dataset.theme = 'emerald';
 		} else {
 			root.classList.add('theme-dark');
+			root.dataset.theme = 'dracula';
 		}
 	}, [theme]);
 
