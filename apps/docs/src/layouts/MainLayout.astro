@@ -64,7 +64,7 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 				display: flex;
 				flex-direction: column;
 				height: 100%;
-				width: calc(100vw - 20rem);
+				width: 100vw;
 			}
 
 			#grid-right {
@@ -84,6 +84,10 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 					position: sticky;
 					grid-column: 1;
 				}
+
+				#grid-main {
+				width: calc(100vw - 20rem);
+			}
 			}
 
 			@media (min-width: 72em) {
